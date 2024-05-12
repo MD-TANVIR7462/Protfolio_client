@@ -94,7 +94,7 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
             </li>
             <li>
               <Link
-                href={"/skills"}
+                href={"/dashboard/skills"}
                 className="flex flex-row items-center h-12 transform hover:bg-gray-300 transition-transform duration-200  hover:rounded-xl  text-gray-700 hover:text-black"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
