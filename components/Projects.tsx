@@ -9,9 +9,12 @@ import {
 import ProjectCard from "./ProjectCard";
 
 const Projects: React.FC<{}> = async () => {
-  const projectFetch = await fetch("http://localhost:5000/api/v1/projects", {
-    cache: "no-store",
-  });
+  const projectFetch = await fetch(
+    "https://protfolio-server-two.vercel.app/api/v1/projects",
+    {
+      cache: "no-store",
+    }
+  );
   const projectData = await projectFetch.json();
 
   return (

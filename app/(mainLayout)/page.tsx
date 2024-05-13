@@ -7,13 +7,16 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 
 const page = async () => {
-  const skillsData = await fetch("http://localhost:5000/api/v1/skills", {
-    cache: "no-store",
-  });
+  const skillsData = await fetch(
+    "https://protfolio-server-two.vercel.app/api/v1/skills",
+    {
+      cache: "no-store",
+    }
+  );
   const result = await skillsData.json();
   const skills = result.data;
   const experienceData = await fetch(
-    "http://localhost:5000/api/v1/experience",
+    "https://protfolio-server-two.vercel.app/api/v1/experience",
     {
       cache: "no-store",
     }
@@ -26,7 +29,7 @@ const page = async () => {
       <div className="flex flex-col gap-12 md:gap-20">
         <Banner />
         <About />
-       
+
         <div className="z-[1]">
           <h1 className="text-white  font-semibold text-center text-3xl sm:text-4xl lg:text-5xl md:pt-[35px]">
             SKILLS

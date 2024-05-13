@@ -4,9 +4,12 @@ import SkillsForm from "@/components/skillsForm";
 import React from "react";
 
 const page = async () => {
-  const skillsData = await fetch("http://localhost:5000/api/v1/skills", {
-    cache: "no-store",
-  });
+  const skillsData = await fetch(
+    "https://protfolio-server-two.vercel.app/api/v1/skills",
+    {
+      cache: "no-store",
+    }
+  );
   const result = await skillsData.json();
   const skills = result.data;
   return (

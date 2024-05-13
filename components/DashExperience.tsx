@@ -12,10 +12,32 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Trash } from "lucide-react";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 const DashExperience = ({ experience }: { experience: any }) => {
+  const router = useRouter();
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
+
+  const handleDelete = async (id: string) => {
+    const deleteExperience = await fetch(
+      `https://protfolio-server-two.vercel.app/api/v1/experience/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    const res = await deleteExperience.json();
+    if (res.success) {
+      toast.success(res.message);
+      router.refresh();
+    }
+    if (!res.success) {
+   
+      toast.error(res.message);
+    }
+  };
+
   return (
     <section id="experience">
       <h1 className="text-white font-semibold text-center text-3xl md:text-4xl lg:text-5xl   md:pt-[35px]">
@@ -62,9 +84,14 @@ const DashExperience = ({ experience }: { experience: any }) => {
                       <br />
                       <br />
                     </p>
-                <button className="text-gray-400  mt-4  cursor-pointer hover:text-red-600">
-                  <Trash className="w-4 h-4 sm:w-5 sm:h-5  " />
-                </button>
+                    <button
+                      onClick={() => {
+                        handleDelete(singleExperience._id);
+                      }}
+                      className="text-gray-400  mt-4  cursor-pointer hover:text-red-600"
+                    >
+                      <Trash className="w-4 h-4 sm:w-5 sm:h-5  " />
+                    </button>
                   </div>
                 </div>
               </div>

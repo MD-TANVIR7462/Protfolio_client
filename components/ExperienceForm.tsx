@@ -9,32 +9,33 @@ const ExperienceForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
-  const router = useRouter()
+  const router = useRouter();
   const onSubmit = async (skillsData: any) => {
-    const res = await fetch("http://localhost:5000/api/v1/experience", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(skillsData),
-      cache: "no-store",
-    });
+    const res = await fetch(
+      "https://protfolio-server-two.vercel.app/api/v1/experience",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(skillsData),
+        cache: "no-store",
+      }
+    );
     const data = await res.json();
     if (data.success) {
-      console.log(data);
+   
       toast.success(data.message);
-      router.refresh()
-      reset()
-  
+      router.refresh();
+      reset();
     }
     if (!data.success) {
       toast.error(data.message);
     }
   };
-
 
   return (
     <div className="">
@@ -80,9 +81,9 @@ const ExperienceForm = () => {
             </label>
           </div>
           <div className="relative z-0">
-            <textarea rows={5}
+            <textarea
+              rows={5}
               {...register("description", { required: true })}
-             
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />

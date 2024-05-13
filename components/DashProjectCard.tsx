@@ -1,9 +1,32 @@
+"use client";
 import { Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { toast } from "sonner";
 
 const DashProjectCard = ({ singleProject }: { singleProject: any }) => {
+  const router = useRouter();
+  const handleDelete = async (id: string) => {
+ 
+    const deleteProject = await fetch(
+      `https://protfolio-server-two.vercel.app/api/v1/projects/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+    const res = await deleteProject.json();
+    if (res.success) {
+      toast.success(res.message);
+      router.refresh();
+    }
+    if (!res.success) {
+   
+      toast.error(res.message);
+    }
+  };
+
   return (
     <div className="">
       <div className="  w-[40dvh] sm:w-[50dvh] mx-auto md:w-[40dvh]    flex flex-col justify-center p-4 border border-gray-700 rounded-lg shadow-2xl">
@@ -53,10 +76,14 @@ const DashProjectCard = ({ singleProject }: { singleProject: any }) => {
               Server
             </button>
           </Link>
-          <button className="min-w-auto  h-10  p-2 border border-gray-700 rounded-r-full hover:bg-red-500  text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+          <button
+            onClick={() => {
+              handleDelete(singleProject._id);
+            }}
+            className="min-w-auto  h-10  p-2 border border-gray-700 rounded-r-full hover:bg-red-500  text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out text-center"
+          >
             <Trash className="w-4 h-4 sm:w-5 sm:h-5  " />
           </button>
-       
         </div>
       </div>
     </div>

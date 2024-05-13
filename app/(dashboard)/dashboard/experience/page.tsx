@@ -4,7 +4,7 @@ import React from "react";
 
 const ExperiencePage = async () => {
   const experienceData = await fetch(
-    "http://localhost:5000/api/v1/experience",
+    "https://protfolio-server-two.vercel.app/api/v1/experience",
     {
       cache: "no-store",
     }

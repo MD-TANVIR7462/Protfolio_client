@@ -9,32 +9,33 @@ const ProjectForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
-  const router = useRouter()
+  const router = useRouter();
   const onSubmit = async (skillsData: any) => {
-    const res = await fetch("http://localhost:5000/api/v1/projects", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(skillsData),
-      cache: "no-store",
-    });
+    const res = await fetch(
+      "https://protfolio-server-two.vercel.app/api/v1/projects",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(skillsData),
+        cache: "no-store",
+      }
+    );
     const data = await res.json();
     if (data.success) {
-      console.log(data);
+
       toast.success(data.message);
-      router.refresh()
-      reset()
-  
+      router.refresh();
+      reset();
     }
     if (!data.success) {
       toast.error(data.message);
     }
   };
-
 
   return (
     <div className="">
@@ -65,7 +66,7 @@ const ProjectForm = () => {
               placeholder=""
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-             Image Link
+              Image Link
             </label>
           </div>
           <div className="relative z-0">
@@ -101,7 +102,6 @@ const ProjectForm = () => {
               Client Link
             </label>
           </div>
-          
         </div>
         <button
           type="submit"

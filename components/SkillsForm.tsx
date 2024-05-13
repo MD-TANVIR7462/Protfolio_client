@@ -14,7 +14,7 @@ const SkillsForm = () => {
   } = useForm();
 const router = useRouter()
   const onSubmit = async (skillsData: any) => {
-    const res = await fetch("http://localhost:5000/api/v1/skills", {
+    const res = await fetch("https://protfolio-server-two.vercel.app/api/v1/skills", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const router = useRouter()
     });
     const data = await res.json();
     if (data.success) {
-      console.log(data);
+     
       toast.success(data.message);
       router.refresh()
       reset()
