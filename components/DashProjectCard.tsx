@@ -1,10 +1,9 @@
+import { Trash } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-
-const ProjectCard = ({ singleProject }:{singleProject:any}) => {
-  
+const DashProjectCard = ({ singleProject }: { singleProject: any }) => {
   return (
     <div className="">
       <div className="  w-[40dvh] sm:w-[50dvh] mx-auto md:w-[40dvh]    flex flex-col justify-center p-4 border border-gray-700 rounded-lg shadow-2xl">
@@ -50,14 +49,18 @@ const ProjectCard = ({ singleProject }:{singleProject:any}) => {
             target="_blank"
             className="z-[1]"
           >
-            <button className="min-w-auto  h-10  p-2 border border-gray-700 rounded-r-full hover:bg-gray-500  text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+            <button className="min-w-auto  h-10  p-2 border border-gray-700 rounded-none hover:bg-gray-500  text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
               Server
             </button>
           </Link>
+          <button className="min-w-auto  h-10  p-2 border border-gray-700 rounded-r-full hover:bg-red-500  text-white font-semibold hover:flex-grow transition-all duration-200 ease-in-out">
+            <Trash className="w-4 h-4 sm:w-5 sm:h-5  " />
+          </button>
+       
         </div>
       </div>
     </div>
   );
 };
 
-export default ProjectCard;
+export default DashProjectCard;

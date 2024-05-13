@@ -2,7 +2,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 
-const ExperienceForm = () => {
+const ProjectForm = () => {
   const {
     register,
     handleSubmit,
@@ -25,49 +25,60 @@ const ExperienceForm = () => {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="relative z-0">
             <input
-              {...register(" ", { required: true })}
+              {...register("name", { required: true })}
               type="text"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-              Company name
+              Project Name
             </label>
           </div>
           <div className="relative z-0">
             <input
-              {...register("time", { required: true })}
-              type="text"
+              {...register("image", { required: true })}
+              type="url"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=""
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-              Time (ex : DECEMBER 2023 - PRESENT)
+             Image Link
             </label>
           </div>
           <div className="relative z-0">
             <input
-              {...register("positon", { required: true })}
-              type="text"
+              {...register("live", { required: true })}
+              type="url"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-              Position
+              Live Link
             </label>
           </div>
           <div className="relative z-0">
-            <textarea rows={5}
-              {...register("description", { required: true })}
-             
+            <input
+              {...register("server", { required: true })}
+              type="url"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-              Description
+              Server Link
             </label>
           </div>
-          {/* Similarly, implement other fields with validation */}
+          <div className="relative z-0">
+            <input
+              {...register("server", { required: true })}
+              type="client"
+              className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
+              placeholder=" "
+            />
+            <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
+              Client Link
+            </label>
+          </div>
+          
         </div>
         <button
           type="submit"
@@ -80,4 +91,4 @@ const ExperienceForm = () => {
   );
 };
 
-export default ExperienceForm;
+export default ProjectForm;

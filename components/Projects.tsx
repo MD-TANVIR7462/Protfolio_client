@@ -8,48 +8,13 @@ import {
 
 import ProjectCard from "./ProjectCard";
 
-const Projects: React.FC<{}> = () => {
-  const projects = [
-    {
-      name: "Charitiaus",
-      image: "https://i.ibb.co/b2Nyrjd/Charitiaus.png",
-      features:
-        "Charitious is a web platform designed to facilitate donations and community engagement for various charitable causes.",
-      link: "https://charitiaus.netlify.app/",
-      server: "https://github.com/MD-TANVIR7462/Charitious_Server",
-      client: "https://github.com/MD-TANVIR7462/Charitious_Client",
-    },
+const Projects: React.FC<{}> = async () => {
+  
+  const projectFetch = await fetch("http://localhost:5000/api/v1/projects", {
+    cache: "no-store",
+  });
+  const projectData = await projectFetch.json();
 
-    {
-      name: "Swift Mart",
-      image: "https://i.ibb.co/pzXK9Dm/Swift-Mart.png",
-      features:
-        "Swift Mart is a Ecommerce Website where users can Buy Any Product and The admin can add or remove any product and ETC..Admin Email : testing@gmail.com || Pass: Test@T .",
-      link: "https://ecommerce-project-7462.web.app/",
-      server: "https://github.com/MD-TANVIR7462/Ecommerce-project-server",
-      client: "https://github.com/MD-TANVIR7462/Economic-project-client",
-    },
-    {
-      name: "Suds Cart",
-      image: "https://i.ibb.co/HrtKkYx/Sudscart.png",
-      features:
-        "SudsCart - Your Ultimate Destination for Dishwashing Essentials!.",
-      link: "https://diswashing-app.vercel.app/",
-      server: "https://github.com/MD-TANVIR7462/sudsCart_server",
-      client: "https://github.com/MD-TANVIR7462/SudsCart_client",
-    },
-
-    {
-      name: "Toy Land",
-      image:
-        "https://i.ibb.co/QHmyHkH/White-Colorful-Soft-Photo-Grid-Layout-Mockup-Frame-Set-Moodboard-Photo-Collage-2.png",
-      features:
-        "an Online Toy Store Website, Implemented a responsive design approach, ensuring seamless browsing and purchasing across desktop and mobile devices.",
-      link: "https://toy-land12.netlify.app/",
-      server: "https://github.com/MD-TANVIR7462/Toyland-server",
-      client: "https://github.com/MD-TANVIR7462/Toyland-Client-main",
-    },
-  ];
   return (
     <section id="" className="z-[1]  w-full sm:w-[96%] mx-auto">
       <h1 className="text-white font-semibold text-center text-3xl sm:text-4xl lg:text-5xl md:pt-[35px]">
@@ -61,16 +26,18 @@ const Projects: React.FC<{}> = () => {
 
       <Carousel className=" max-w-[87%]  md:max-w-[87%] lg:w-[90%] xl:max-w-[1350px]   justify-items-center mx-auto  gap-4 ">
         <CarouselContent className="-ml-1">
-          {projects?.map((singleProject, index) => (
+          {projectData.data?.map((singleProject:any)=> (
             <CarouselItem
-              key={index}
+              key={singleProject._id}
               className="pl-1 md:basis-1/2 xl:basis-1/3"
             >
               <ProjectCard
-                key={index}
+                key={singleProject._id}
                 singleProject={singleProject}
               ></ProjectCard>
+          
             </CarouselItem>
+           
           ))}
         </CarouselContent>
         <CarouselPrevious className="hidden sm:inline-flex" />

@@ -1,17 +1,17 @@
-import DashExperience from "@/components/DashExperience";
+import DashProject from "@/components/DashProject";
 import ExperienceForm from "@/components/ExperienceForm";
+import ProjectForm from "@/components/ProjectForm";
 
 // @ts-ignore
-import SkillsForm from "@/components/skillsForm";
 import React from "react";
 
 const ExperiencePage = () => {
   return (
     <div className="mb-12">
       <div className="mb-8">
-        <DashExperience />
+        <DashProject />
       </div>
-      <ExperienceForm />
+      <ProjectForm />
     </div>
   );
 };

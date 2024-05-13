@@ -1,5 +1,12 @@
 "use client";
 
+
+import { Button } from "@/components/ui/button";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import React from "react";
 import Image from "next/image";
 
@@ -35,14 +42,28 @@ const Banner: React.FC<{}> = () => {
           Passionate Web Developer with a focus on MERN Stack development,
           dedicated to crafting elegant and user-friendly Web applications.
         </p>
-        <div className="text-sm md:text-md flex justify-center">
-          <button
-            onClick={() => window.open("mailto:mdtanvir7462@gmail.com")}
-            className="    hover:bg-white rounded-3xl  text-white font-semibold hover:text-black md:py-3 py-2 px-5 md:px-10  border-[0.1px] border-white hover:border-transparent "
-          >
-            Contact Me
-          </button>
-        </div>
+   
+          <HoverCard >
+            <HoverCardTrigger asChild>
+   <Button className="text-transparent w-40 mx-auto font-semibold text-xl bg-clip-text bg-gradient-to-r from-purple-500 to-orange-400  border">CONTACT ME </Button>
+            </HoverCardTrigger>
+            <HoverCardContent className={`w-80 `}>
+
+           
+                <div className="space-y-1 text-center  ">
+                  <h4 className="text-sm font-semibold ">CONTACT ME </h4>
+                  <p className="text-sm">
+                  <b> Phone : +880 1998863753 </b> 
+                  </p>
+                  <p className="text-sm">
+                  <b> MAIL : mdtanvir7462@gmail.com </b> 
+                  </p>
+                
+                </div>
+    
+            </HoverCardContent>
+          </HoverCard>
+        
       </div>
     </div>
   );

@@ -1,82 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const Skills = () => {
-  const skills = [
-    {
-      title: "HTML",
-      percent: 95,
-    },
-    {
-      title: "Css",
-      percent: 70,
-    },
-    {
-      title: "Javascript",
-      percent: 70,
-    },
-    {
-      title: "Typescript",
-      percent: 80,
-    },
-    {
-      title: "Express Js",
-      percent: 90,
-    },
-    {
-      title: "React Js",
-      percent: 85,
-    },
-    {
-      title: "Next JS",
-      percent: 75,
-    },
-    {
-      title: "Redux",
-      percent: 70,
-    },
-    {
-      title: "Mongodb",
-      percent: 80,
-    },
-    {
-      title: "Mongoose",
-      percent: 75,
-    },
-    {
-      title: "Tailwindcss",
-      percent: 85,
-    },
-    {
-      title: "Node js",
-      percent: 90,
-    },
-    {
-      title: "Firebase",
-      percent: 80,
-    },
-    {
-      title: "Bootstrap",
-      percent: 75,
-    },
-    {
-      title: "Framer Motion",
-      percent: 85,
-    },
-    {
-      title: "VS Code",
-      percent: 90,
-    },
-    {
-      title: "Github",
-      percent: 80,
-    },
-    {
-      title: "Vercel",
-      percent: 85,
-    },
-  ];
-
+const Skills = ({ skills }: { skills: any }) => {
   const [currentSkill, setCurrentSkill] = useState({
     title: "HTML",
     percent: 95,
@@ -94,7 +19,7 @@ const Skills = () => {
   return (
     <section className="flex flex-col gap-5 sm:flex-row w-[96%] sm:w-[90%] md:w-[85%] lg:w-[70%] z-[1] mx-auto max-w-[1400px] items-center justify-around">
       <div className=" order-2 sm:order-1 grid justify-items-center  grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 ">
-        {skills.map((skill) => (
+        {skills?.map((skill: any) => (
           <button
             key={skill.title}
             onClick={() => handleSkillClick(skill)}
