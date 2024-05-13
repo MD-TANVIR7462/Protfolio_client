@@ -1,10 +1,14 @@
 import DashSKills from "@/components/DashSKills";
-import Skills from "@/components/Skills";
 // @ts-ignore
 import SkillsForm from "@/components/skillsForm";
 import React from "react";
 
-const page = () => {
+const page = async () => {
+  const skillsData = await fetch("http://localhost:5000/api/v1/skills", {
+    cache: "no-store",
+  });
+  const result = await skillsData.json();
+  const skills = result.data;
   return (
     <div className="mb-12">
       <div className="mb-8">
@@ -12,7 +16,7 @@ const page = () => {
           SKILLS
         </h1>
 
-        <DashSKills />
+        <DashSKills skills={skills} />
       </div>
 
       <SkillsForm />

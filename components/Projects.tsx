@@ -9,7 +9,6 @@ import {
 import ProjectCard from "./ProjectCard";
 
 const Projects: React.FC<{}> = async () => {
-  
   const projectFetch = await fetch("http://localhost:5000/api/v1/projects", {
     cache: "no-store",
   });
@@ -26,7 +25,7 @@ const Projects: React.FC<{}> = async () => {
 
       <Carousel className=" max-w-[87%]  md:max-w-[87%] lg:w-[90%] xl:max-w-[1350px]   justify-items-center mx-auto  gap-4 ">
         <CarouselContent className="-ml-1">
-          {projectData.data?.map((singleProject:any)=> (
+          {projectData.data?.map((singleProject: any) => (
             <CarouselItem
               key={singleProject._id}
               className="pl-1 md:basis-1/2 xl:basis-1/3"
@@ -35,9 +34,7 @@ const Projects: React.FC<{}> = async () => {
                 key={singleProject._id}
                 singleProject={singleProject}
               ></ProjectCard>
-          
             </CarouselItem>
-           
           ))}
         </CarouselContent>
         <CarouselPrevious className="hidden sm:inline-flex" />

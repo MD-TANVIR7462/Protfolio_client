@@ -1,15 +1,20 @@
 import DashExperience from "@/components/DashExperience";
 import ExperienceForm from "@/components/ExperienceForm";
-
-// @ts-ignore
-import SkillsForm from "@/components/skillsForm";
 import React from "react";
 
-const ExperiencePage = () => {
+const ExperiencePage = async () => {
+  const experienceData = await fetch(
+    "http://localhost:5000/api/v1/experience",
+    {
+      cache: "no-store",
+    }
+  );
+  const experienceResult = await experienceData.json();
+  const experience = experienceResult.data;
   return (
     <div className="mb-12">
       <div className="mb-8">
-        <DashExperience />
+        <DashExperience experience={experience} />
       </div>
       <ExperienceForm />
     </div>

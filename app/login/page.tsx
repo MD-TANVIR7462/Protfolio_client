@@ -17,7 +17,7 @@ const loginPage = () => {
     } catch (error: any) {}
   };
   return (
-    <div >
+    <div>
       <div className="flex  h-[90dvh] md:h-[80dvh] w-full  items-center justify-center  bg-cover bg-no-repeat mt-8">
         <div className="rounded-xl bg-gray-800 bg-opacity-50 px-[12dvh] py-[12dvh] shadow-lg backdrop-blur-md max-sm:px-8">
           <div className="text-white">
@@ -47,7 +47,7 @@ const loginPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-     
+
               <div className="mt-8 flex justify-center text-lg">
                 <button
                   type="submit"
@@ -56,23 +56,22 @@ const loginPage = () => {
                   Login
                 </button>
               </div>
-              
             </form>
           </div>
         </div>
       </div>
       <p className="w-full text-center">
-              {" "}
-              <span className="text-gray-300">
-                Why Here  ?{" "}
-                <Link
-                  href={"/"}
-                  className="cursor-pointer hover:text-purple-700 text-purple-500 "
-                >
-                  Go Home
-                </Link>
-              </span>
-            </p>
+        {" "}
+        <span className="text-gray-300">
+          Why Here ?{" "}
+          <Link
+            href={"/"}
+            className="cursor-pointer hover:text-purple-700 text-purple-500 "
+          >
+            Go Home
+          </Link>
+        </span>
+      </p>
     </div>
   );
 };

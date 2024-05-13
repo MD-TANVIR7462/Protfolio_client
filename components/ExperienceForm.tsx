@@ -1,17 +1,40 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const ExperienceForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const router = useRouter()
+  const onSubmit = async (skillsData: any) => {
+    const res = await fetch("http://localhost:5000/api/v1/experience", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(skillsData),
+      cache: "no-store",
+    });
+    const data = await res.json();
+    if (data.success) {
+      console.log(data);
+      toast.success(data.message);
+      router.refresh()
+      reset()
+  
+    }
+    if (!data.success) {
+      toast.error(data.message);
+    }
   };
+
 
   return (
     <div className="">
@@ -25,7 +48,7 @@ const ExperienceForm = () => {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="relative z-0">
             <input
-              {...register(" ", { required: true })}
+              {...register("company", { required: true })}
               type="text"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
@@ -47,7 +70,7 @@ const ExperienceForm = () => {
           </div>
           <div className="relative z-0">
             <input
-              {...register("positon", { required: true })}
+              {...register("position", { required: true })}
               type="text"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "

@@ -1,16 +1,38 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const SkillsForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-
-  const onSubmit = (data: any) => {
-    console.log(data);
+const router = useRouter()
+  const onSubmit = async (skillsData: any) => {
+    const res = await fetch("http://localhost:5000/api/v1/skills", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(skillsData),
+      cache: "no-store",
+    });
+    const data = await res.json();
+    if (data.success) {
+      console.log(data);
+      toast.success(data.message);
+      router.refresh()
+      reset()
+  
+    }
+    if (!data.success) {
+      toast.error(data.message);
+    }
   };
 
   return (
@@ -25,13 +47,13 @@ const SkillsForm = () => {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="relative z-0">
             <input
-              {...register("name", { required: true })}
+              {...register("title", { required: true })}
               type="text"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-             Skill name
+              Skill name
             </label>
             {errors.name && (
               <span className="text-red-500">Name is required</span>
@@ -39,13 +61,13 @@ const SkillsForm = () => {
           </div>
           <div className="relative z-0">
             <input
-              {...register("percentage", { required: true })}
+              {...register("percent", { required: true })}
               type="number"
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
               placeholder=" "
             />
             <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm  duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-purple-600 text-purple-400">
-             Percentage 
+              Percentage
             </label>
             {errors.percentage && (
               <span className="text-red-500">Name is required</span>
