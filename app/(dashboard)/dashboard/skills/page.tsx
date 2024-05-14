@@ -1,6 +1,7 @@
 import DashSKills from "@/components/DashSKills";
-// @ts-ignore
-import SkillsForm from "@/components/skillsForm";
+import SkillsForm from "@/components/SkillsForm";
+
+
 import React from "react";
 
 const page = async () => {
