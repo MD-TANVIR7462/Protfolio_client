@@ -17,11 +17,11 @@ const Banner: React.FC<{}> = () => {
         <div className="justify-center flex ">
           <Image
             priority
-            src="https://i.ibb.co/myRpFC7/Black-Gold-Dynamic-Business-Circle-Profile-Image.png"
+            src="https://i.ibb.co/hLvY508/Promo-Facebook-Facebook-marketplace-1.png"
             height={350}
             width={350}
             alt="Tanvir"
-            className="rounded-full"
+            className="rounded-full "
           />
         </div>
 
@@ -50,7 +50,7 @@ const Banner: React.FC<{}> = () => {
             <HoverCardContent className={`w-80 `}>
 
            
-                <div className="space-y-1 text-center  ">
+                <div className="space-y-1 text-center">
                   <h4 className="text-sm font-semibold ">CONTACT ME </h4>
                   <p className="text-sm">
                   <b> Phone : +880 1998863753 </b> 

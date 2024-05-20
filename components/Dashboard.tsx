@@ -83,7 +83,7 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
           <ul className="flex flex-col py-4">
             <li>
               <Link
-                href={"/dashboard"}
+                href={"/Tanvir/dashboard"}
                 className="flex flex-row items-center h-12 transform hover:bg-gray-300 transition-transform duration-200  hover:rounded-xl  text-gray-700 hover:text-black"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
@@ -94,7 +94,7 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
             </li>
             <li>
               <Link
-                href={"/dashboard/skills"}
+                href={"/Tanvir/dashboard/skills"}
                 className="flex flex-row items-center h-12 transform hover:bg-gray-300 transition-transform duration-200  hover:rounded-xl  text-gray-700 hover:text-black"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
@@ -105,7 +105,7 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
             </li>
             <li>
               <Link
-                href={"/dashboard/experience"}
+                href={"/Tanvir/dashboard/experience"}
                 className="flex flex-row items-center h-12 transform hover:bg-gray-300 transition-transform duration-200  hover:rounded-xl  text-gray-700 hover:text-black"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
@@ -116,7 +116,7 @@ const Dashboard = ({ children }: { children: ReactNode }) => {
             </li>
             <li>
               <Link
-                href={"/dashboard/Project"}
+                href={"/Tanvir/dashboard/Project"}
                 className="flex flex-row items-center h-12 transform hover:bg-gray-300 transition-transform duration-200  hover:rounded-xl  text-gray-700 hover:text-black"
               >
                 <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">
