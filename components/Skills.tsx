@@ -17,15 +17,15 @@ const Skills = ({ skills }: { skills: any }) => {
   };
 
   return (
-    <section className=" flex flex-col gap-5 sm:flex-row w-[96%] sm:w-[90%] md:w-[85%] lg:w-[70%] z-[1] mx-auto max-w-[1400px] items-center justify-around">
+    <section className="flex flex-col gap-5 sm:flex-row w-[96%] sm:w-[90%] md:w-[85%] lg:w-[70%]  mx-auto max-w-[1400px] items-center justify-around">
       <div className=" order-2 sm:order-1 grid justify-items-center  grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 ">
         {skills?.map((skill: any) => (
           <button
             key={skill.title}
             onClick={() => handleSkillClick(skill)}
-            className={`px-3 py-2 text-md text-gray-200 transition border-[0.3px]  rounded-md h-10 w-36 hover:bg-gray-400 ${
+            className={`z-10 px-3 py-2 text-md text-gray-200 transition border-[0.3px]  rounded-md h-10 w-36 hover:bg-gray-400 ${
               currentSkill.title === skill.title &&
-              "font-bold ring-2 ring-gray-100 bg-gray-400"
+              "font-bold ring-2 ring-gray-100 bg-gray-400 "
             }`}
           >
             {skill.title}

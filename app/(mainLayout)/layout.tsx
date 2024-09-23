@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-[#111] overflow-y-scroll overflow-x-hidden`}
+        className={`${inter.className} bg-[#111] overflow-y-scroll overflow-x-hidden `}
       >
         <Toaster position="top-center" />
         <StarsCanvas />

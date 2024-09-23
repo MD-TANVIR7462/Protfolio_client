@@ -25,8 +25,8 @@ const page = async () => {
   const experience = experienceResult.data;
 
   return (
-    <div className="h-full w-full  bg-[url('/LooperGroup2.png')] bg-no-repeat z-[1]">
-      <div id="/">
+    <div className="h-full w-full  bg-[url('/LooperGroup2.png')] bg-no-repeat z-50">
+      <div id="/" className="">
         <Banner />
       </div>
       <div id="about">

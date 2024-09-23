@@ -98,13 +98,13 @@ export default function Navbar() {
 
 
   return (
-    <nav className="sticky top-0  z-50  text-white shadow-lg bg-black bg-opacity-80 ">
+    <nav className="sticky top-0  z-10  text-white shadow-lg bg-black bg-opacity-80 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link
               to="/"
-              className="text-2xl font-bold text-transparent w-40 mx-auto  bg-clip-text bg-gradient-to-r from-purple-500 to-orange-400"
+              className="text-2xl cursor-pointer font-bold text-transparent w-40 mx-auto  bg-clip-text bg-gradient-to-r from-purple-500 to-orange-400"
             >
               Tanvir
             </Link>

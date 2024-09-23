@@ -25,7 +25,7 @@ const Experience = ({ experience }: { experience: any }) => {
       </p>
       <Carousel
         plugins={[plugin.current]}
-        className="w-full md:w-[85%] lg:w-[76%] xl:w-[70%] z-10 mx-auto"
+        className="w-full md:w-[85%] lg:w-[76%] xl:w-[70%]  mx-auto"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >

@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Banner: React.FC<{}> = () => {
   return (
-    <div className="flex  flex-row items-center justify-center px-6  pt-[12%] md:pt-[8%]  lg:pt-[5%] sm:px-20  z-[20] ">
+    <div className="flex  flex-row items-center justify-center px-6  pt-[12%] md:pt-[8%]  lg:pt-[5%] sm:px-20   ">
       <div className="flex flex-col  justify-center  text-center">
         <div className="justify-center flex ">
           <Image
@@ -43,7 +43,7 @@ const Banner: React.FC<{}> = () => {
         </p>
         <HoverCard>
           <HoverCardTrigger asChild>
-            <Button className="text-transparent w-40 mx-auto font-semibold text-xl bg-clip-text bg-gradient-to-r from-purple-500 to-orange-400  border">
+            <Button className="z-10 text-transparent w-40 mx-auto font-semibold text-xl bg-clip-text bg-gradient-to-r from-purple-500 to-orange-400  border">
               CONTACT ME{" "}
             </Button>
           </HoverCardTrigger>
