@@ -2,9 +2,8 @@ import React from "react";
 
 const About: React.FC<{}> = () => {
   return (
-    <section
-      id="about"
-      className="flex flex-col items-center justify-center h-full relative overflow-hidden  sm:pt-[35px] "
+    <section 
+      className="flex   flex-col mt-[2%] py-[13%] md:py-[7%]  lg:py-[5%] items-center justify-center h-full relative overflow-hidden  sm:pt-[35px] "
       style={{ transform: "scale(0.9" }}
     >
       <div className="flex flex-col  justify-around flex-wrap items-center   max-w-[900px]">

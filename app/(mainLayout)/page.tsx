@@ -26,24 +26,34 @@ const page = async () => {
 
   return (
     <div className="h-full w-full  bg-[url('/LooperGroup2.png')] bg-no-repeat z-[1]">
-      <div className="flex flex-col gap-12 md:gap-20">
+      <div id="/">
         <Banner />
-        <About />
-
-        <div className="z-[1]">
-          <h1 className="text-white  font-semibold text-center text-3xl sm:text-4xl lg:text-5xl md:pt-[35px]">
-            SKILLS
-          </h1>
-          <p className=" tracking-[0.5em] text-center text-transparent font-light pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500  text-1xl mb-5 sm:mb-12 ">
-            EXPLORE NOW
-          </p>
-          <Skills skills={skills} />
-        </div>
-        <Experience experience={experience} />
-        <Projects />
-        <ContactForm />
-        <Footer />
       </div>
+      <div id="about">
+        <About />
+      </div>
+      <div
+        className="z-[1]  mt-[2%] pt-[7%] md:pt-[5%]  lg:pt-[4%] "
+        id="skills"
+      >
+        <h1 className="text-white  font-semibold text-center text-3xl sm:text-4xl lg:text-5xl ">
+          SKILLS
+        </h1>
+        <p className=" tracking-[0.5em] text-center text-transparent font-light pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500  text-1xl mb-5 sm:mb-12 ">
+          EXPLORE NOW
+        </p>
+        <Skills skills={skills} />
+      </div>
+      <div className="mt-[2%] pt-[7%] md:pt-[5%]  lg:pt-[4%] " id="experience">
+        <Experience experience={experience} />
+      </div>
+      <div className="mt-[2%] pt-[7%] md:pt-[5%]  lg:pt-[4%] " id="project">
+        <Projects />
+      </div>
+      <div className="mt-[2%] py-[7%] md:py-[5%]  lg:py-[4%] " id="contact">
+        <ContactForm />
+      </div>
+      <Footer />
     </div>
   );
 };
