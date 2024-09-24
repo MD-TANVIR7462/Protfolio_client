@@ -20,7 +20,7 @@ const Footer: React.FC<{}> = () => {
                 src={social.image}
                 height={30}
                 width={30}
-                className="mx-5"
+                className={`mx-5 ${social.alt == "fb" && "bg-white rounded-sm"}`}
                 alt={social.alt}
               />
             </Link>
@@ -28,7 +28,7 @@ const Footer: React.FC<{}> = () => {
         })}
       </div>
       <p className="text-gray-300 text-center text-sm">
-       Design & Created by ❤️ TANVIR
+        Design & Created by ❤️ TANVIR
       </p>
     </div>
   );

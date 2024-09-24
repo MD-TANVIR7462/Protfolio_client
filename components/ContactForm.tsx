@@ -21,7 +21,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <div >
+    <div>
       <h1 className="text-white font-semibold text-center text-3xl sm:text-4xl lg:text-5xl md:pt-[35px]">
         CONTACT ME
       </h1>
@@ -30,7 +30,7 @@ const ContactForm = () => {
         onSubmit={handleContact}
       >
         <div className="grid gap-6 sm:grid-cols-2">
-          <div className="relative z-0">
+          <div className="relative ">
             <input
               required
               type="text"
@@ -42,7 +42,7 @@ const ContactForm = () => {
               Your name
             </label>
           </div>
-          <div className="relative z-0">
+          <div className="relative ">
             <input
               required
               type="email"
@@ -54,7 +54,7 @@ const ContactForm = () => {
               Your Email
             </label>
           </div>
-          <div className="relative z-0">
+          <div className="relative ">
             <input
               required
               type="number"
@@ -66,7 +66,7 @@ const ContactForm = () => {
               Your Phone
             </label>
           </div>
-          <div className="relative z-0">
+          <div className="relative ">
             <input
               required
               type="text"
@@ -78,8 +78,10 @@ const ContactForm = () => {
               Your Address
             </label>
           </div>
-          <div className="relative z-0 col-span-2">
+          <div className="relative  col-span-2">
             <textarea
+              required
+              minLength={50}
               name="message"
               rows={5}
               className="peer block w-full appearance-none border-0 border-b border-gray-500  bg-transparent py-2.5 px-0 text-sm text-white  focus:outline-none focus:ring-0"
@@ -90,9 +92,10 @@ const ContactForm = () => {
             </label>
           </div>
         </div>
+
         <button
           type="submit"
-          className="mt-5 rounded-md border border-purple-500 btn  px-10 py-2 text-white z-[1]"
+          className="relative mt-5 z-10 cursor-pointer  rounded-md border border-purple-500 btn  px-10 py-2 text-white "
         >
           Submit
         </button>

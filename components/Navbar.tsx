@@ -120,7 +120,7 @@ export default function Navbar() {
                   offset={50}
                   duration={400}
                   key={item.name}
-                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gradient-to-r from-purple-500 to-orange-400 transition duration-150 ease-in-out"
+                  className="px-3 cursor-pointer py-2 rounded-md text-sm font-medium hover:bg-gradient-to-r from-purple-500 to-orange-400 transition duration-150 ease-in-out"
                 >
                   {item.name}
                 </Link>
@@ -173,7 +173,7 @@ export default function Navbar() {
                       offset={50}
                       duration={500}
                  
-                      className="block px-4 py-2 text-white hover:bg-gray-600 rounded transition duration-150 ease-in-out"
+                      className="block px-4 py-2 cursor-pointer text-white hover:bg-gray-600 rounded transition duration-150 ease-in-out"
                       onClick={toggleMenu}
                     >
                       {item.name}

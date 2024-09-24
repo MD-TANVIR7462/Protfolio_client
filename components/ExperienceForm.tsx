@@ -27,7 +27,6 @@ const ExperienceForm = () => {
     );
     const data = await res.json();
     if (data.success) {
-   
       toast.success(data.message);
       router.refresh();
       reset();
