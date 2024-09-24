@@ -98,7 +98,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="sticky top-0  z-10  text-white shadow-lg bg-black bg-opacity-80 ">
+    <nav className="sticky top-0  z-40  text-white shadow-lg bg-black bg-opacity-80 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -149,7 +149,7 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={sidebarVariants}
-            className="fixed inset-y-0 left-0 w-64 bg-gray-950  overflow-y-auto z-50"
+            className="fixed inset-y-0 left-0 w-64 bg-gray-950  overflow-y-auto z-10"
           >
             <div className="px-4 py-6">
               {/* <button
